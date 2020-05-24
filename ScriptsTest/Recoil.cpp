@@ -134,40 +134,21 @@ void Recoil()
 		while ((GetAsyncKeyState(1) & 0x8000) && (GetAsyncKeyState(2) & 0x8000 && selectedWeapon != -1 && scriptActive == true))
 		{
 			
-			for(int i=0; i < weaponAmmo(selectedWeapon); i++)
+			for (int i = 0; i < weaponAmmo(selectedWeapon); i++)
 			{
-				Timer timer;
 				if (!(GetAsyncKeyState(1) & 0x8000) || !(GetAsyncKeyState(2) & 0x8000))
 				{
 					continue;
 				}
-				
+
 				Math::Vector2 delta; delta.x = weaponDeltaX(selectedWeapon)[i + 1] - weaponDeltaX(selectedWeapon)[i]; delta.y = weaponDeltaY(selectedWeapon)[i + 1] - weaponDeltaY(selectedWeapon)[i];
 				float multiplier = -0.03f * (sens * 3.0f) * (fov / 100.0f);
 				Math::Vector2 px; px.x = delta.x / multiplier; px.y = delta.y / multiplier;
-				Math::Vector2 totalMoved;
 
-				float animationTime = sqrt((delta.x * delta.x) + (delta.x * delta.x))/0.02f;
-				
-				float elapsed = timer.Elapsed();
-
-				cout << "AnimationTime:" << animationTime << " Elapsed: " << elapsed << endl;
-				
-				//Used to be start of while elapsed < animationTime
-					float t = elapsed / animationTime;
-
-					Math::Vector2 toMove = (px.Lerp(t) - totalMoved).Floor();
-
-					mouse_move(toMove);
-					//totalMoved += toMove;
-					//mouse_move((px - totalMoved).Floor());
-					SleepEx(weaponTime(selectedWeapon), false);
-				//End of while
-				
+				mouse_move(px);
+				Sleep(weaponTime(selectedWeapon));
 
 			}
-			
-			Sleep(1);
 		}	
 	}
 }
