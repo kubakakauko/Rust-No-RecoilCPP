@@ -1,8 +1,7 @@
 ﻿  Recoil.cpp
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(145,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(149,21): warning C4244: 'argument': conversion from 'float' to 'DWORD', possible loss of data
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(171,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(85): warning C4715: 'weaponDeltaX': not all control paths return a value
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(114): warning C4715: 'weaponTime': not all control paths return a value
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(101): warning C4715: 'weaponDeltaY': not all control paths return a value
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(188,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(237,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(84): warning C4715: 'weaponDeltaX': not all control paths return a value
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(113): warning C4715: 'weaponTime': not all control paths return a value
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(100): warning C4715: 'weaponDeltaY': not all control paths return a value
   ScriptsTest.vcxproj -> D:\Learning\Rust_Script_Projects\ScriptsTest\x64\Debug\ScriptsTest.exe
