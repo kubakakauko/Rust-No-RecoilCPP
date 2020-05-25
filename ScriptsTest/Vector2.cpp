@@ -28,7 +28,7 @@ namespace Math
 	/*
 	 * Implementation for Math::Vector2::Lerp (end, t)
 	 */
-	Vector2 Vector2::Lerp(Vector2 end, float t)
+	Vector2 Vector2::Lerp(const Vector2 end, float t)
 	{
 		// Clamp 't' between 0 and 1
 		t = Vector2::clamp(t, 0.0f, 1.0f);

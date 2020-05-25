@@ -61,7 +61,7 @@
 		 * Returns:
 		 *  The lerped values between this vector and 'end' vector given 't'
 		 */
-		Vector2 Lerp(Vector2 end, float t);
+		Vector2 Lerp(static Vector2 end, float t);
 
 		/*
 		 * Used to get the lower rounded natural numbers for this vector
@@ -92,7 +92,7 @@
 		/*
 		 * Overload Vector2 subtract operator
 		 */
-		Vector2 operator - (Vector2 other)
+		Vector2 operator - (static Vector2 other)
 		{
 			return {
 				x - other.x,
@@ -103,7 +103,7 @@
 		/*
 		 * Overload Vector2 addition operator
 		 */
-		Vector2 operator + (Vector2 other)
+		Vector2 operator + (static Vector2 other)
 		{
 			return {
 				x + other.x,
@@ -114,7 +114,7 @@
 		/*
 		 * Overload the Vector2 multiplication operator
 		 */
-		Vector2 operator * (Vector2 other)
+		Vector2 operator * (static Vector2 other)
 		{
 			return {
 				x * other.x,
@@ -125,7 +125,7 @@
 		/*
 		 * Overload for the Vector2 division operator
 		 */
-		Vector2 operator / (Vector2 other)
+		Vector2 operator / (static Vector2 other)
 		{
 			return {
 				x / other.x,
@@ -136,7 +136,7 @@
 		/*
 		 * Overload for the add assign operator
 		 */
-		void operator += (Vector2 other)
+		void operator += (static Vector2 other)
 		{
 			// Update this vector's values
 			x += other.x;
@@ -146,7 +146,7 @@
 		/*
 		 * Overload for the subtract assign operator
 		 */
-		void operator -= (Vector2 other)
+		void operator -= (static Vector2 other)
 		{
 			// Update this vector's values
 			x -= other.x;
@@ -156,7 +156,7 @@
 		/*
 		 * Overload for the multiply assign operator
 		 */
-		void operator *= (Vector2 other)
+		void operator *= (static Vector2 other)
 		{
 			// Update this vector's values
 			x *= other.x;
@@ -166,7 +166,7 @@
 		/*
 		 * Overload for the divide assign operator
 		 */
-		void operator /= (Vector2 other)
+		void operator /= (static Vector2 other)
 		{
 			// Update this vector's values
 			x /= other.x;

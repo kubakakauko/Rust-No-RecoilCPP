@@ -14,11 +14,10 @@
 
 using namespace std;
 using namespace AssaultRifle;
-using namespace defaultNothingNamespace;
 
 #pragma region Variables
-double sens = 1.0f;
-double fov = 90.0f;
+float sens = 1.0f;
+float fov = 90.0f;
 int selectedWeapon = -1; //Checks what weapon is selected | -1 none | 0 AK |
 bool scriptActive = false;
 
@@ -38,9 +37,7 @@ void mouse_move(int x, int y) //Mouse Movement (For now takes integers but want 
 }
 void KeyHandler()  // Determines if the script was activated.
 {
-	for (;;)
-	{
-		Sleep(10);
+	
 		//Activate the scripts
 		if (GetAsyncKeyState(VK_F2))
 		{
@@ -49,11 +46,11 @@ void KeyHandler()  // Determines if the script was activated.
 
 			if (scriptActive)
 			{
-				Beep(300, 200);
+				Beep(300, 100);
 			}
 			else
 			{
-				Beep(100, 200);
+				Beep(100, 100);
 			}
 		}
 
@@ -64,17 +61,16 @@ void KeyHandler()  // Determines if the script was activated.
 			{
 				selectedWeapon = -1;
 				Beep(100, 500);
-				Sleep(200);
+				Sleep(100);
 			}
 			else
 			{
 				selectedWeapon = 0;
 				Beep(1000, 300);
-				Sleep(200);
+				Sleep(100);
 			}
 		}
-		Sleep(200);
-	}
+	
 }
 
 
@@ -87,7 +83,7 @@ float* weaponDeltaX(int selected)
 			break;
 
 		default:
-			defaultNothing;
+			return 0;
 			break;
 	}
 }
@@ -100,7 +96,7 @@ float* weaponDeltaY(int selected)
 		break;
 
 	default:
-		defaultNothing;
+		return 0;
 		break;
 	}
 }
@@ -127,6 +123,24 @@ int weaponAmmo(int selected)
 	}
 }
 
+float* attatchment(int selectedAttachment)
+{
+	float barrel[] = { 0, 0 };
+	
+	switch (selectedBarrel)
+	{
+	case 0:
+		return (barrel);
+	case 1:
+		return;
+	}
+	
+}
+
+float scope(int selectedScope)
+{
+	
+}
 void smoothRecoil(float x, float y, float animationTime)
 {
 	//Creating a new timer counting elapsed time
@@ -148,6 +162,8 @@ void smoothRecoil(float x, float y, float animationTime)
 		totalMoved += moveTo;
 
 		SleepEx(1, false);
+
+		
 	}
 	
 	Math::Vector2 extraMove = (targetMove - totalMoved).Floor();
@@ -159,6 +175,7 @@ void calculations()
 	//Forever
 	for(;;)
 	{
+		KeyHandler();
 		//While Left and Right mouse buttons  && weapon is selected && scripts are active 
 		while ((GetAsyncKeyState(1) & 0x8000) && (GetAsyncKeyState(2) & 0x8000 && selectedWeapon != -1 && scriptActive == true))
 		{
@@ -173,7 +190,7 @@ void calculations()
 				
 				Math::Vector2 delta;
 				//if there is not more ammunition stop the code to prevent weird recoils
-				if(i == weaponAmmo(selectedWeapon))
+				if(i == weaponAmmo(selectedWeapon) - 1)
 				{
 					break;
 				}
@@ -202,41 +219,35 @@ void calculations()
 				smoothRecoil(x, y, animationTime);
 				//if there is a negative weapon time, go to sleep
 				if (weaponTime(selectedWeapon) - animationTime > 0.0f) { SleepEx(static_cast<int>(weaponTime(selectedWeapon) - animationTime), false); }
-
 			}
 		}
 	}
 }
 
 
-void gameSettings()
-{
-	
-	Utilities::clear();
-	string sSensitivity;
-	string sFov;
-	
-
-	cout << "Sensitivity: ";
-	getline(cin, sSensitivity);
-	cout  << endl << "FOV: ";
-	getline(cin, sFov);
-
-	sens = ::atof(sSensitivity.c_str());
-	fov = ::atof(sFov.c_str());
-	Utilities::clear();
-}
 void drawing()
 {
 
 }
+void gameSettings()
+{
 
+	Utilities::clear();
+	std::string sSensitivity;
+	std::string sFov;
+
+
+	std::cout << "Sensitivity: ";
+	getline(std::cin, sSensitivity);
+	std::cout << std::endl << "FOV: ";
+	getline(std::cin, sFov);
+
+	fov = ::atof(sSensitivity.c_str());
+	sens = ::atof(sFov.c_str());
+	Utilities::clear();
+}
 void main()
 {
-	//starts a thread taking detecting the keypresses 
-
-
-	
 	gameSettings();
 	cout << "Welcome to COMBO-X\n";
 	cout << "------------------\n";
@@ -246,11 +257,9 @@ void main()
 	cout << "THOMPSON = 4\n\n\n";
 
 	//starts threads
-	CreateThread(0, 0, (LPTHREAD_START_ROUTINE)KeyHandler, 0, 0, 0);
 	CreateThread(0, 0, (LPTHREAD_START_ROUTINE)calculations, 0, 0, 0);
 
-
-	//Puts the theads to sleep to decrease CPU load
+	//Puts the thead to sleep to decrease CPU load
 	for (;;)
 	{
 		Sleep(50);

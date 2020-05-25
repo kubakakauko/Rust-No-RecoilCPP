@@ -3,7 +3,11 @@
 
 class Utilities
 {
+
 public:
+    float fov;
+    float sens;
+	
     //Clears the console
     static void clear() {
         COORD topLeft = { 0, 0 };
@@ -21,6 +25,7 @@ public:
         );
         SetConsoleCursorPosition(console, topLeft);
     }
+    
 };
 
 
@@ -73,3 +78,5 @@ public:
         // Used to determine when the function was instantiated
         LARGE_INTEGER starting_time;
     };
+
+   
