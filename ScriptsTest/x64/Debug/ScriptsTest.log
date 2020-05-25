@@ -1,7 +1,9 @@
 ﻿  Recoil.cpp
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(188,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(237,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(84): warning C4715: 'weaponDeltaX': not all control paths return a value
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(113): warning C4715: 'weaponTime': not all control paths return a value
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(100): warning C4715: 'weaponDeltaY': not all control paths return a value
-  ScriptsTest.vcxproj -> D:\Learning\Rust_Script_Projects\ScriptsTest\x64\Debug\ScriptsTest.exe
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(219,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(265,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Timer.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnt.h(173,1): fatal error C1189: #error:  "No Target Architecture"
+  Generating Code...
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(107): warning C4715: 'weaponDeltaY': not all control paths return a value
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(94): warning C4715: 'weaponDeltaX': not all control paths return a value
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(117): warning C4715: 'weaponTime': not all control paths return a value

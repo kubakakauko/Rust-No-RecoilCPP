@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\ScriptsTest"
   ],
-  "SelectedNode": "\\ScriptsTest.sln",
+  "SelectedNode": "\\ScriptsTest\\Recoil.cpp",
   "PreviewInSolutionExplorer": false
 }

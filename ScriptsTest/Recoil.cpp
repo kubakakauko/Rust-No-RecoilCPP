@@ -1,22 +1,29 @@
-#include <Windows.h>
+#include "imGui/imgui.h"
+#include "imGui/imgui_impl_dx9.h"
+#include "imGui/imgui_impl_win32.h"
+#include <d3d9.h>
+
 #include <iostream>
 #include <string>
 #include "Weapons.h"
-#include <array>
 #include "Vector2.h"
+#include <array>
+#include "Utilites.h"
+
 
 
 using namespace std;
 using namespace AssaultRifle;
 using namespace defaultNothingNamespace;
-using namespace classes;
-
 
 #pragma region Variables
 double sens = 1.0f;
 double fov = 90.0f;
 int selectedWeapon = -1; //Checks what weapon is selected | -1 none | 0 AK |
 bool scriptActive = false;
+
+int selectedScope;
+int selectedBarrel;
 #pragma endregion
 void mouse_move(int x, int y) //Mouse Movement (For now takes integers but want to be reprogrammed to take in Vector2)
 {
@@ -29,35 +36,37 @@ void mouse_move(int x, int y) //Mouse Movement (For now takes integers but want 
 	input.mi.dwFlags = MOUSEEVENTF_MOVE;
 	SendInput(1, &input, sizeof(input));
 }
-int KeyHandler() // Determines if the script was activated.
+void KeyHandler()  // Determines if the script was activated.
 {
-	for(;;)
+	for (;;)
 	{
-		
 		Sleep(10);
 		//Activate the scripts
 		if (GetAsyncKeyState(VK_F2))
-		{   Sleep(100);
+		{
+			Sleep(100);
 			scriptActive = !scriptActive;
-			
-			if(scriptActive) 
+
+			if (scriptActive)
 			{
 				Beep(300, 200);
-			}else
+			}
+			else
 			{
 				Beep(100, 200);
-			}	
+			}
 		}
-		
+
 		// AK-47
 		if (GetAsyncKeyState(VK_NUMPAD0) < 0)
 		{
-			if(selectedWeapon != -1)
+			if (selectedWeapon != -1)
 			{
 				selectedWeapon = -1;
 				Beep(100, 500);
 				Sleep(200);
-			}else
+			}
+			else
 			{
 				selectedWeapon = 0;
 				Beep(1000, 300);
@@ -65,15 +74,13 @@ int KeyHandler() // Determines if the script was activated.
 			}
 		}
 		Sleep(200);
-	}	
+	}
 }
-#pragma region Recoil Delta Return
+
 
 float* weaponDeltaX(int selected)
 {
-	int s = selected;
-
-	switch (s)
+	switch (selected)
 	{
 		case 0:
 			return AssaultRifleX;
@@ -84,12 +91,9 @@ float* weaponDeltaX(int selected)
 			break;
 	}
 }
-
 float* weaponDeltaY(int selected)
 {
-	int s = selected;
-
-	switch (s)
+	switch (selected)
 	{
 	case 0:
 		return AssaultRifleY;
@@ -100,12 +104,9 @@ float* weaponDeltaY(int selected)
 		break;
 	}
 }
-
 float weaponTime(int selected)
 {
-	int s = selected;
-
-	switch (s)
+	switch (selected)
 	{
 	case 0:
 		return AssaultRifleTimes;
@@ -115,8 +116,7 @@ float weaponTime(int selected)
 }
 int weaponAmmo(int selected)
 {
-	int s = selected;
-	switch (s)
+	switch (selected)
 	{
 	case 0:
 		return AssaultRifleAmmo;
@@ -126,7 +126,6 @@ int weaponAmmo(int selected)
 		return 0;
 	}
 }
-#pragma endregion Recoil Delta Return
 
 void smoothRecoil(float x, float y, float animationTime)
 {
@@ -210,18 +209,10 @@ void calculations()
 }
 
 
-
-
-
-
-
-
-
-
-
 void gameSettings()
 {
-	Clear();
+	
+	Utilities::clear();
 	string sSensitivity;
 	string sFov;
 	
@@ -233,25 +224,18 @@ void gameSettings()
 
 	sens = ::atof(sSensitivity.c_str());
 	fov = ::atof(sFov.c_str());
-	Clear();
+	Utilities::clear();
 }
 void drawing()
 {
-	
-	
+
 }
 
 void main()
 {
 	//starts a thread taking detecting the keypresses 
-	CreateThread(0, 0, (LPTHREAD_START_ROUTINE)KeyHandler, 0, 0, 0);
 
-	//If the scripts are not active, don't proceed 
-	while(!scriptActive)
-	{
-		cout << "Press F2 To Turn the scripts on"<<endl;
-		Sleep(1000);
-	}
+
 	
 	gameSettings();
 	cout << "Welcome to COMBO-X\n";
@@ -262,6 +246,7 @@ void main()
 	cout << "THOMPSON = 4\n\n\n";
 
 	//starts threads
+	CreateThread(0, 0, (LPTHREAD_START_ROUTINE)KeyHandler, 0, 0, 0);
 	CreateThread(0, 0, (LPTHREAD_START_ROUTINE)calculations, 0, 0, 0);
 
 

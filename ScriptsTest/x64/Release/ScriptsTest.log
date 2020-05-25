@@ -1,0 +1,5 @@
+﻿  Recoil.cpp
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(214,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(260,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Timer.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnt.h(173,1): fatal error C1189: #error:  "No Target Architecture"
