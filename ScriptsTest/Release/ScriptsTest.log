@@ -8,19 +8,10 @@ D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(139,41): warn
 D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(149,41): warning C4042: 'other': has bad storage class
 D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(159,41): warning C4042: 'other': has bad storage class
 D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(169,41): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(227,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(228,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(232,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  Vector2.cpp
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(64,34): warning C4042: 'end': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(95,43): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(106,43): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(117,43): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(128,43): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(139,41): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(149,41): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(159,41): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(169,41): warning C4042: 'other': has bad storage class
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(181,11): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(295,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(296,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(300,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
   Generating code
   0 of 236 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation

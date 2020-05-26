@@ -1,6 +1,15 @@
 #pragma once
 
-namespace AssaultRifle{
+bool scriptActive = false;
+float sens = 1.0f;
+float fov = 90.0f;
+int selectedWeapon = 0;
+int selectedScope = 0;
+int selectedAttachment = 0;
+
+
+#pragma region Values
+namespace assaultRifle{
 
 	const int AssaultRifleAmmo= 30;
 	float AssaultRifleX[] = {0.0f, 1.390706f, 1.176434f, 3.387171f, 5.087049f, 5.094189f, 4.426013f, 3.250455f, 1.73545f, 0.04893398f, -1.641158f, -3.166891f, -4.360331f, -5.053545f, -5.090651f, -4.489915f, -3.382552f, -1.899585f, -0.1720295f, 1.669086f, 3.492748f, 5.16793f, 6.563614f, 7.548776f, 7.992399f, 7.512226f, 6.063792f, 4.117367f, 2.143932f, 0.6144824f};
@@ -96,7 +105,127 @@ namespace nailGun//capacity 16 rpm 400
 	float nailY[] = { -2.5f, -5.0f, -7.5f, -10.0f, -12.5f, -15.0f, -17.5f, -20.0f, -22.5f, -25.0f, -27.5f, -30.0f, -32.5f, -35.0f, -37.5f, -40.0f, -42.5f };
 	float nailTimes = 1000.0f / (400.0f / 60.0f);
 }
+#pragma endregion 
 
+float* weaponDeltaX(int selected)
+{
+	switch (selected)
+	{
+	case 1:
+		return assaultRifle::AssaultRifleX;
+		break;
+
+	default:
+		return 0;
+		
+	}
+}
+float* weaponDeltaY(int selected)
+{
+	switch (selected)
+	{
+	case 1:
+		return assaultRifle::AssaultRifleY;
+		
+
+	default:
+		return 0;
+		
+	}
+}
+float weaponTime(int selected)
+{
+	switch (selected)
+	{
+		case 1:
+			return assaultRifle::AssaultRifleTimes;
+			
+		default:
+			return 1;
+		
+	}
+}
+int weaponAmmo(int selected)
+{
+	switch (selected)
+	{
+		case 1:
+			return assaultRifle::AssaultRifleAmmo;
+			
+
+		default:
+			return 0;
+	}
+}
+
+float* attatchment(int selectedAttachment)
+{
+	//Returning recoil:fireRate Multipliers 
+	float muzzleBoost[] = { 1.0f , 0.9f };
+	float muzzleBrake[] = { 0.5f, 1.0f };
+	float silencer[] = { 0.8f, 1.0f };
+	float nothing[] = { 1.0, 1.0f };
+
+
+	switch (selectedAttachment)
+	{
+	case 0:
+		return nothing;
+		break;
+
+	case 1:
+		return muzzleBoost;
+		break;
+
+	case 2:
+		return muzzleBrake;
+		break;
+
+	case 3:
+		return silencer;
+		break;
+
+	default:
+		return nothing;
+		break;
+	}
+
+}
+float scope(int selectedScope)
+{
+	const float scope8x = 3.83721f;
+	const float scope16x = 7.65116f;
+	const float holosight = 1.18605f;
+	const float homeMade = 0.8f;
+
+	switch (selectedScope)
+	{
+	case 0:
+		return 1;
+		break;
+
+	case 1:
+		return holosight;
+		break;
+
+	case 2:
+		return homeMade;
+		break;
+
+	case 3:
+		return scope8x;
+		break;
+
+	case 4:
+		return scope16x;
+		break;
+
+	default:
+		return 1;
+		break;
+	}
+
+}
 
 
 
