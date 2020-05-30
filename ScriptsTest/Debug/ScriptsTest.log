@@ -1,16 +1,9 @@
-﻿  imgui.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_impl_dx9.cpp
-  imgui_widgets.cpp
+﻿  Menu.cpp
   Recoil.cpp
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(219,22): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(265,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  Timer.cpp
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\winnt.h(173,1): fatal error C1189: #error:  "No Target Architecture"
-  Utilities.cpp
-  Vector2.cpp
   Generating Code...
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(107): warning C4715: 'weaponDeltaY': not all control paths return a value
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(94): warning C4715: 'weaponDeltaX': not all control paths return a value
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(117): warning C4715: 'weaponTime': not all control paths return a value
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(167): warning C4172: returning address of local variable or temporary: nothing
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(171): warning C4172: returning address of local variable or temporary: muzzleBoost
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(175): warning C4172: returning address of local variable or temporary: muzzleBrake
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(179): warning C4172: returning address of local variable or temporary: silencer
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(183): warning C4172: returning address of local variable or temporary: nothing
+  ScriptsTest.vcxproj -> D:\Learning\Rust_Script_Projects\ScriptsTest\Debug\ScriptsTest.exe

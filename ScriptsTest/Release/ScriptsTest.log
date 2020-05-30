@@ -1,20 +1,14 @@
-﻿  Recoil.cpp
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(64,34): warning C4042: 'end': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(95,43): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(106,43): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(117,43): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(128,43): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(139,41): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(149,41): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(159,41): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Vector2.h(169,41): warning C4042: 'other': has bad storage class
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(181,11): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(295,14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(296,15): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(300,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  Generating code
-  0 of 236 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  ScriptsTest.vcxproj -> D:\Learning\Rust_Script_Projects\ScriptsTest\Release\ScriptsTest.exe
+﻿  Drawing.cpp
+  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_dx9.cpp
+  imgui_widgets.cpp
+  Recoil.cpp
+  Vector2.cpp
+Drawing.obj : error LNK2001: unresolved external symbol "void __cdecl CleanupDeviceD3D(void)" (?CleanupDeviceD3D@@YAXXZ)
+Drawing.obj : error LNK2001: unresolved external symbol "void __cdecl ImGui_ImplWin32_Shutdown(void)" (?ImGui_ImplWin32_Shutdown@@YAXXZ)
+Drawing.obj : error LNK2001: unresolved external symbol "bool __cdecl ImGui_ImplWin32_Init(void *)" (?ImGui_ImplWin32_Init@@YA_NPAX@Z)
+Drawing.obj : error LNK2001: unresolved external symbol "long __stdcall WndProc(struct HWND__ *,unsigned int,unsigned int,long)" (?WndProc@@YGJPAUHWND__@@IIJ@Z)
+Drawing.obj : error LNK2001: unresolved external symbol "void __cdecl ImGui_ImplWin32_NewFrame(void)" (?ImGui_ImplWin32_NewFrame@@YAXXZ)
+D:\Learning\Rust_Script_Projects\ScriptsTest\Release\ScriptsTest.exe : fatal error LNK1120: 5 unresolved externals

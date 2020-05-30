@@ -1,7 +1,7 @@
-﻿  Recoil.cpp
-  Generating code
-  1 of 230 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  ScriptsTest.vcxproj -> D:\Learning\Rust_Script_Projects\ScriptsTest\x64\Release\ScriptsTest.exe
+﻿  Drawing.cpp
+Drawing.obj : error LNK2001: unresolved external symbol "void __cdecl CleanupDeviceD3D(void)" (?CleanupDeviceD3D@@YAXXZ)
+Drawing.obj : error LNK2001: unresolved external symbol "void __cdecl ImGui_ImplWin32_Shutdown(void)" (?ImGui_ImplWin32_Shutdown@@YAXXZ)
+Drawing.obj : error LNK2001: unresolved external symbol "bool __cdecl ImGui_ImplWin32_Init(void *)" (?ImGui_ImplWin32_Init@@YA_NPEAX@Z)
+Drawing.obj : error LNK2001: unresolved external symbol "__int64 __cdecl WndProc(struct HWND__ *,unsigned int,unsigned __int64,__int64)" (?WndProc@@YA_JPEAUHWND__@@I_K_J@Z)
+Drawing.obj : error LNK2001: unresolved external symbol "void __cdecl ImGui_ImplWin32_NewFrame(void)" (?ImGui_ImplWin32_NewFrame@@YAXXZ)
+D:\Learning\Rust_Script_Projects\ScriptsTest\x64\Release\ScriptsTest.exe : fatal error LNK1120: 5 unresolved externals

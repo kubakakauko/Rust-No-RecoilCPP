@@ -1,7 +1,10 @@
 ﻿  Recoil.cpp
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(174): warning C4172: returning address of local variable or temporary: nothing
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(178): warning C4172: returning address of local variable or temporary: muzzleBoost
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(182): warning C4172: returning address of local variable or temporary: muzzleBrake
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(186): warning C4172: returning address of local variable or temporary: silencer
-D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(190): warning C4172: returning address of local variable or temporary: nothing
-  ScriptsTest.vcxproj -> D:\Learning\Rust_Script_Projects\ScriptsTest\x64\Debug\ScriptsTest.exe
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Recoil.cpp(209,63): warning C4312: 'type cast': conversion from 'int' to 'LPTHREAD_START_ROUTINE' of greater size
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(167): warning C4172: returning address of local variable or temporary: nothing
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(171): warning C4172: returning address of local variable or temporary: muzzleBoost
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(175): warning C4172: returning address of local variable or temporary: muzzleBrake
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(179): warning C4172: returning address of local variable or temporary: silencer
+D:\Learning\Rust_Script_Projects\ScriptsTest\ScriptsTest\Weapons.h(183): warning C4172: returning address of local variable or temporary: nothing
+Recoil.obj : error LNK2019: unresolved external symbol "public: static void __cdecl Utilities::clear(void)" (?clear@Utilities@@SAXXZ) referenced in function "void __cdecl Recoil::gameSettings(void)" (?gameSettings@Recoil@@YAXXZ)
+Recoil.obj : error LNK2019: unresolved external symbol "public: static void __cdecl names::mainText(void)" (?mainText@names@@SAXXZ) referenced in function "void __cdecl Recoil::keyHandler(void)" (?keyHandler@Recoil@@YAXXZ)
+D:\Learning\Rust_Script_Projects\ScriptsTest\x64\Debug\ScriptsTest.exe : fatal error LNK1120: 2 unresolved externals

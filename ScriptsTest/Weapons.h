@@ -117,7 +117,6 @@ float* weaponDeltaX(int selected)
 
 	default:
 		return 0;
-		
 	}
 }
 float* weaponDeltaY(int selected)
@@ -127,10 +126,8 @@ float* weaponDeltaY(int selected)
 	case 1:
 		return assaultRifle::AssaultRifleY;
 		
-
 	default:
 		return 0;
-		
 	}
 }
 float weaponTime(int selected)
@@ -142,7 +139,6 @@ float weaponTime(int selected)
 			
 		default:
 			return 1;
-		
 	}
 }
 int weaponAmmo(int selected)
@@ -152,7 +148,6 @@ int weaponAmmo(int selected)
 		case 1:
 			return assaultRifle::AssaultRifleAmmo;
 			
-
 		default:
 			return 0;
 	}
@@ -165,7 +160,6 @@ float* attatchment(int selectedAttachment)
 	float muzzleBrake[] = { 0.5f, 1.0f };
 	float silencer[] = { 0.8f, 1.0f };
 	float nothing[] = { 1.0, 1.0f };
-
 
 	switch (selectedAttachment)
 	{
@@ -224,7 +218,6 @@ float scope(int selectedScope)
 		return 1;
 		break;
 	}
-
 }
 
 
