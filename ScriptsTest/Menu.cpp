@@ -1,6 +1,6 @@
 #include "Menu.h"
 #include "Recoil.h"
-
+#include <list>
 
 // Data
 static ID3D11Device* g_pd3dDevice = NULL;
@@ -36,6 +36,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
      ImGui::CreateContext();
      ImGuiIO& io = ImGui::GetIO(); (void)io;
 
+
      // Setup Dear ImGui style
      ImGui::StyleColorsDark();
 
@@ -52,7 +53,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
      ZeroMemory(&msg, sizeof(msg));
      while(msg.message != WM_QUIT)
      {
-         Recoil::calculations;
+         Recoil::calculations();
 
          // Poll and handle messages (inputs, window resize, etc.)
          // You can read the io.WantCaptureMouse, io.WantCaptureKeyboard flags to tell if dear imgui wants to use your inputs.
@@ -63,10 +64,11 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
          {
              ::TranslateMessage(&msg);
              ::DispatchMessage(&msg);
+
              continue;
              
          }
-
+         
          // Start the Dear ImGui frame
          ImGui_ImplDX11_NewFrame();
          ImGui_ImplWin32_NewFrame();
@@ -80,21 +82,40 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
          {
              static float f = 0.0f;
              static int counter = 0;
+             const char* weapons[] = { "None","Assault-Rifle", "LR300" ,"Thompson", "Custom-SMG", "M249", "MP5", "Semi-Auto-Rifle", "M39", "M92", "Semi-Auto-Pistol","Python","Revolver","Nail-Gun" };
+             const char* attachments[] = {"None", "Muzzle-Boost", "Muzzle-Brake", "Silencer"};
+             const char* scopes[] = {"None", "Holosight", "Home-Made", "8x", "16x"};
 
-             ImGui::Begin("Combo-X");                          // Create a window called "Hello, world!" and append into it.
+             ImGui::Begin("Combo-X",0);                                  // Create a window called "Hello, world!" and append into it.
 
-             ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-             ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
+             ImGui::Checkbox("Activated ", &Recoil::scriptActive);
 
-             ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-             ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
 
-             if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-                 counter++;
-             ImGui::SameLine();
-             ImGui::Text("counter = %d", counter);
+             ImGui::Text("Selected Weapon: "); ImGui::SameLine(); ImGui::Text(("{}", Recoil::weaponName(Recoil::selectedWeapon)).c_str());
+             ImGui::Text("Selected Scope: "); ImGui::SameLine(); ImGui::Text(("{}", Recoil::scopeName(Recoil::selectedScope)).c_str());
+             ImGui::Text("Selected Attachment: "); ImGui::SameLine(); ImGui::Text(("{}", Recoil::attachmentName(Recoil::selectedAttachment)).c_str());
 
-             ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+             if(ImGui::CollapsingHeader("Weapons"))
+             {
+                 ImGui::ListBox("Weapon", &Recoil::selectedWeapon, weapons, IM_ARRAYSIZE(weapons), 14);
+
+             }
+
+             if(ImGui::CollapsingHeader("Scopes"))
+             {
+                 ImGui::ListBox("Scope", &Recoil::selectedScope, scopes, IM_ARRAYSIZE(scopes), 5);
+
+             }
+
+             if(ImGui::CollapsingHeader("Attachments"))
+             {
+                 ImGui::ListBox("Attachment", &Recoil::selectedAttachment, attachments, IM_ARRAYSIZE(attachments), 4);
+             }
+             //
+             //ImGui::Separator();
+             //ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
+             //ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+             
              ImGui::End();
          }
 

@@ -5096,7 +5096,38 @@ static void NotifyOfDocumentsClosedElsewhere(ExampleAppDocuments& app)
     }
 }
 
-void ShowExampleAppDocuments(bool* p_open)
+void
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ShowExampleAppDocuments(bool* p_open)
 {
     static ExampleAppDocuments app;
 

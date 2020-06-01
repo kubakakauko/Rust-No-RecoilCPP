@@ -155,7 +155,6 @@
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Recoil.cpp" />
     <ClCompile Include="Vector2.cpp" />
-    <ClCompile Include="Weapons.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImGui\imconfig.h" />
